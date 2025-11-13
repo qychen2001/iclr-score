@@ -11,7 +11,6 @@
 - **统一 CLI**：`python -m iclr_score ...` 或安装后直接用 `iclr-score`，包含投稿抓取、评分抓取、统计、绘图、Primary Area 分析等子命令。
 - **零敏感信息**：不再硬编码 access token、cookie 或真实数据，所有凭据通过参数 / 环境变量提供，仓库内仅保留合成示例。
 - **模块化实现**：`src/iclr_score/` 暴露了 OpenReview 客户端与统计/绘制函数，可单独在 notebook 或脚本中复用。
-- **示例数据**：`examples/data/` 中提供了两个虚拟投稿与评审 JSON，方便快速测试流程。
 
 ## 快速上手
 
@@ -91,19 +90,6 @@
 - `--header key=value`：额外 header（例如自定义 `user-agent`）。
 - `--base-url` / `--timeout`：可指向自建 proxy 或调整请求超时。
 
-## 示例数据
-
-`examples/data/` 下包含：
-
-- `sample_submissions.json`：两个虚构投稿及其 `primary_area` 字段。
-- `sample_ratings/`：对应 forum 的评审 JSON，字段结构与真实 OpenReview 响应一致。
-
-可用这些文件验证 CLI：
-
-```bash
-iclr-score analyze --ratings-dir examples/data/sample_ratings --csv-output outputs/demo_stats.csv
-iclr-score histogram --ratings-dir examples/data/sample_ratings --json-output outputs/demo_hist.json
-```
 
 ## 隐私与合规
 
@@ -115,7 +101,6 @@ iclr-score histogram --ratings-dir examples/data/sample_ratings --json-output ou
 ```
 iclr-score/
 ├─ src/iclr_score/      # 核心实现（OpenReview 客户端、统计与 CLI）
-├─ examples/data/       # 虚构示例输入
 ├─ README.md
 ├─ pyproject.toml
 └─ uv.lock

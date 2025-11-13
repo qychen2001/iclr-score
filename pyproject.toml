@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iclr-score"
+version = "0.1.0"
+description = "Utilities to fetch and analyze OpenReview rating data."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cairosvg>=2.8.2",
+    "matplotlib>=3.10.7",
+    "requests>=2.32.5",
+    "tqdm>=4.67.1",
+]
+
+[project.scripts]
+iclr-score = "iclr_score.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"

@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+
+# Tool caches
+.uv-cache/
+.uv_cache/
+
+# Local artifacts
+data/
+analysis/
+ratings/
+outputs/
+/iclr_2026_submissions.json
+/iclr_2026_paper_ids.txt
+*.log
+.DS_Store
